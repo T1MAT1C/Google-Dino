@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.7.1" version="1.0">
+This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<lib desc="#Wiring" name="0">
+    <tool name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="center"/>
+    </tool>
+    <tool name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val=" "/>
+    </tool>
+    <tool name="Probe">
+      <a name="facing" val="south"/>
+      <a name="radix" val="16"/>
+    </tool>
+    <tool name="Tunnel">
+      <a name="width" val="8"/>
+      <a name="label" val="x"/>
+      <a name="labelfont" val="SansSerif plain 9"/>
+    </tool>
+    <tool name="Pull Resistor">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Clock">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Constant">
+      <a name="width" val="8"/>
+      <a name="value" val="0x0"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <main name="common_speed"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Menu Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <tool lib="6" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin">
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+  </toolbar>
+  <circuit name="common_speed">
+    <a name="circuit" val="common_speed"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <path d="M61,51 Q65,61 69,51" fill="none" stroke="#808080" stroke-width="2"/>
+      <rect fill="none" height="30" stroke="#000000" stroke-width="2" width="30" x="50" y="50"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="64" y="71">spd</text>
+      <circ-port height="10" pin="120,110" width="10" x="75" y="55"/>
+      <circ-port height="8" pin="100,200" width="8" x="46" y="56"/>
+      <circ-anchor facing="east" height="6" width="6" x="77" y="57"/>
+    </appear>
+    <wire from="(30,90)" to="(60,90)"/>
+    <wire from="(50,50)" to="(80,50)"/>
+    <wire from="(70,70)" to="(70,110)"/>
+    <wire from="(40,40)" to="(40,50)"/>
+    <wire from="(100,190)" to="(100,200)"/>
+    <wire from="(60,60)" to="(80,60)"/>
+    <wire from="(30,70)" to="(50,70)"/>
+    <wire from="(30,30)" to="(80,30)"/>
+    <wire from="(50,50)" to="(50,70)"/>
+    <wire from="(30,50)" to="(40,50)"/>
+    <wire from="(70,70)" to="(80,70)"/>
+    <wire from="(40,40)" to="(80,40)"/>
+    <wire from="(30,110)" to="(70,110)"/>
+    <wire from="(60,60)" to="(60,90)"/>
+    <comp lib="6" loc="(17,16)" name="Text">
+      <a name="text" val="level:"/>
+    </comp>
+    <comp lib="0" loc="(30,110)" name="Clock">
+      <a name="lowDuration" val="2"/>
+      <a name="label" val="5"/>
+    </comp>
+    <comp lib="0" loc="(100,200)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="speed"/>
+    </comp>
+    <comp lib="2" loc="(120,110)" name="Multiplexer">
+      <a name="select" val="4"/>
+      <a name="enable" val="false"/>
+    </comp>
+    <comp lib="0" loc="(30,70)" name="Clock">
+      <a name="lowDuration" val="4"/>
+      <a name="label" val="3"/>
+    </comp>
+    <comp lib="0" loc="(120,110)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="clk"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(30,50)" name="Clock">
+      <a name="lowDuration" val="5"/>
+      <a name="label" val="2"/>
+    </comp>
+    <comp lib="0" loc="(30,90)" name="Clock">
+      <a name="label" val="4"/>
+    </comp>
+    <comp lib="0" loc="(30,30)" name="Clock">
+      <a name="lowDuration" val="6"/>
+      <a name="label" val="1"/>
+    </comp>
+  </circuit>
+  <circuit name="dino_speed">
+    <a name="circuit" val="dino_speed"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <path d="M61,51 Q65,61 69,51" fill="none" stroke="#808080" stroke-width="2"/>
+      <rect fill="none" height="30" stroke="#000000" stroke-width="2" width="30" x="50" y="50"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="65" y="65">dino</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="64" y="75">spd</text>
+      <circ-port height="10" pin="130,110" width="10" x="75" y="55"/>
+      <circ-port height="8" pin="110,200" width="8" x="46" y="56"/>
+      <circ-anchor facing="east" height="6" width="6" x="77" y="57"/>
+    </appear>
+    <wire from="(40,50)" to="(50,50)"/>
+    <wire from="(50,40)" to="(90,40)"/>
+    <wire from="(50,40)" to="(50,50)"/>
+    <wire from="(110,190)" to="(110,200)"/>
+    <wire from="(40,30)" to="(90,30)"/>
+    <comp lib="2" loc="(130,110)" name="Multiplexer">
+      <a name="select" val="4"/>
+      <a name="enable" val="false"/>
+    </comp>
+    <comp lib="6" loc="(18,16)" name="Text">
+      <a name="text" val="level:"/>
+    </comp>
+    <comp lib="0" loc="(40,50)" name="Clock">
+      <a name="lowDuration" val="15"/>
+      <a name="label" val="3-5"/>
+    </comp>
+    <comp lib="0" loc="(130,110)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="clk"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(110,200)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="speed"/>
+    </comp>
+    <comp lib="0" loc="(40,30)" name="Clock">
+      <a name="lowDuration" val="20"/>
+      <a name="label" val="1-2"/>
+    </comp>
+  </circuit>
+</project>
